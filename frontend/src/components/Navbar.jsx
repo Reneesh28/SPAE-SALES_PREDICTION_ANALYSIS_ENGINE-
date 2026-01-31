@@ -39,7 +39,7 @@ export default function Navbar() {
 
       {/* Menu */}
       {openDropdown === title && (
-        <div className="absolute top-full left-0 pt-3 z-[9999]">
+        <div className="absolute top-full left-0 pt-3 z-9999">
           <div className="w-80 rounded-lg bg-neutral-900/95 backdrop-blur-xl border border-white/10 shadow-xl">
             <ul className="py-2">
               {items.map(({ label, path }) => (
