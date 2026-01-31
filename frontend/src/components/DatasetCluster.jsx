@@ -20,7 +20,11 @@ export default function DatasetCluster({ id, center, color }) {
   }, [center]);
 
   useFrame(({ clock }) => {
-    ref.current.rotation.y = clock.getElapsedTime() * 0.15;
+    const t = clock.getElapsedTime();
+    ref.current.rotation.y = t * 0.1;
+    ref.current.position.y = Math.sin(t * 0.5) * 0.2; // Float up and down
+    const breathe = 1 + Math.sin(t * 1.5) * 0.05;
+    ref.current.scale.set(breathe, breathe, breathe);
   });
 
   return (

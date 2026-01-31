@@ -1,4 +1,5 @@
 import { useFrame } from "@react-three/fiber";
+import { Trail } from "@react-three/drei";
 import { useRef } from "react";
 import * as THREE from "three";
 
@@ -17,13 +18,21 @@ export default function AgentPath() {
   });
 
   return (
-    <mesh ref={ref}>
-      <sphereGeometry args={[0.18, 16, 16]} />
-      <meshStandardMaterial
-        color="#22d3ee"
-        emissive="#22d3ee"
-        emissiveIntensity={2}
-      />
-    </mesh>
+    <Trail
+      width={1.5}
+      length={6}
+      color={new THREE.Color("#22d3ee")}
+      attenuation={(t) => t * t}
+    >
+      <mesh ref={ref}>
+        <sphereGeometry args={[0.2, 16, 16]} />
+        <meshStandardMaterial
+          color="#22d3ee"
+          emissive="#22d3ee"
+          emissiveIntensity={4}
+        />
+        <pointLight distance={6} intensity={2} color="#22d3ee" />
+      </mesh>
+    </Trail>
   );
 }
