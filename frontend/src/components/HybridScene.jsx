@@ -6,15 +6,19 @@ import AgentPath from "./AgentPath";
 
 function CameraRig() {
   useFrame(({ camera }) => {
-    camera.position.z = 20 + window.scrollY * 0.006;
+    camera.position.z = 18 + window.scrollY * 0.005;
   });
   return null;
 }
 
 export default function HybridScene() {
   return (
-    <Canvas camera={{ position: [0, 0, 20], fov: 55 }}>
+    <Canvas
+      camera={{ position: [0, 0, 20], fov: 55 }}
+      dpr={[1, 2]} // Optimize for high DPI screens
+    >
       <color attach="background" args={["#000000"]} />
+      <fog attach="fog" args={["#000000", 10, 50]} /> {/* Fade to black distance */}
 
       <ambientLight intensity={0.6} />
       <pointLight position={[10, 10, 10]} intensity={1.5} />
@@ -27,7 +31,7 @@ export default function HybridScene() {
       <AgentPath />
       <CameraRig />
 
-      <OrbitControls enableZoom={false} enablePan={false} autoRotate />
+      <OrbitControls enableZoom={false} enablePan={false} autoRotate autoRotateSpeed={0.5} />
     </Canvas>
   );
 }

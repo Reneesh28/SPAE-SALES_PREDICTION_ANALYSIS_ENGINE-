@@ -9,11 +9,11 @@ export default function DatasetCluster({ id, center, color }) {
 
   const positions = useMemo(() => {
     const pts = [];
-    for (let i = 0; i < 1200; i++) {
+    for (let i = 0; i < 2000; i++) {
       pts.push(
-        center[0] + (Math.random() - 0.5) * 6,
-        center[1] + (Math.random() - 0.5) * 6,
-        center[2] + (Math.random() - 0.5) * 6
+        center[0] + (Math.random() - 0.5) * 10,
+        center[1] + (Math.random() - 0.5) * 10,
+        center[2] + (Math.random() - 0.5) * 10
       );
     }
     return new Float32Array(pts);
@@ -28,7 +28,7 @@ export default function DatasetCluster({ id, center, color }) {
       <PointMaterial
         transparent
         color={color}
-        size={active ? 0.1 : 0.065}
+        size={active ? 0.3 : 0.12}
         opacity={active ? 1 : 0.6}
         depthWrite={false}
       />

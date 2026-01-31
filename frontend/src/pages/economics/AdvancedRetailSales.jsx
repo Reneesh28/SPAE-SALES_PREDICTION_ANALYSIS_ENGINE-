@@ -36,7 +36,7 @@ export default function ComingSoon() {
           {/* Title                                                          */}
           {/* -------------------------------------------------------------- */}
           <h1 className="text-5xl sm:text-6xl font-bold mb-6 text-white">
-            Coming Soon
+            Coming Soon Advanced Retail
           </h1>
 
           {/* -------------------------------------------------------------- */}
@@ -51,7 +51,7 @@ export default function ComingSoon() {
           {/* -------------------------------------------------------------- */}
           <p className="text-gray-400 text-lg leading-relaxed">
             We are actively building advanced analytics, forecasting models,
-            and intelligent insights for this section.  
+            and intelligent insights for this section.
             Stay tuned — powerful capabilities will be available soon.
           </p>
 
