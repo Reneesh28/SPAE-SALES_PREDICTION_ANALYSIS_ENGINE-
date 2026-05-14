@@ -22,6 +22,5 @@ Use the sidebar on the left to navigate through the different sections of the ap
 4. **📏 Model Evaluation**: View performance metrics and actual vs. predicted plots.
 
 ---
-**Author**: Reneesh
 **Model**: XGBoost Regressor
 """)
