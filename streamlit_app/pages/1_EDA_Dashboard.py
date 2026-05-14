@@ -40,3 +40,6 @@ def main():
 
     st.subheader("Correlation")
     st.pyplot(plot_correlation_heatmap(df))
+
+if __name__ == "__main__":
+    main()

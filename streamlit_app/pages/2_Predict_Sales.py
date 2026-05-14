@@ -13,3 +13,6 @@ def main():
     if st.button("Predict"):
         pred = predict_demand(model, store, item, str(date))
         st.success(f"Predicted Sales: {pred}")
+
+if __name__ == "__main__":
+    main()

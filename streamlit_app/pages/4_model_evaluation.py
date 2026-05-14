@@ -41,3 +41,6 @@ def main():
     ax.plot(preds[:500], label="Predicted")
     ax.legend()
     st.pyplot(fig)
+
+if __name__ == "__main__":
+    main()

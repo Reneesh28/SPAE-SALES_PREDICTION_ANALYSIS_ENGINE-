@@ -39,3 +39,6 @@ def main():
         df["predicted_sales"] = preds
 
         st.dataframe(df)
+
+if __name__ == "__main__":
+    main()

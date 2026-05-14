@@ -1,8 +1,4 @@
 import streamlit as st
-import importlib
-
-
-# Page Configuration
 
 st.set_page_config(
     page_title="Demand Forecasting App",
@@ -10,40 +6,22 @@ st.set_page_config(
     layout="wide"
 )
 
-
 # Sidebar Navigation
-
-st.sidebar.title("📂 Navigation")
-
-page = st.sidebar.radio(
-    "Go to:",
-    [
-        "🏠 Home",
-        "📊 EDA Dashboard",
-        "🔮 Single-Day Prediction",
-        "📈 Forecasting",
-        "📏 Model Evaluation"
-    ]
-)
-
-# Dynamic Page Loader
-def load_page(module_name):
-    module = importlib.import_module(module_name)
-    module.main()
+st.sidebar.success("Select a page above.")
 
 # Page Routing
+st.title("📈 Store Item Demand Forecasting App")
 
-if page == "🏠 Home":
-    st.title("📈 Store Item Demand Forecasting App")
+st.markdown("""
+### Welcome to the Demand Forecasting Dashboard!
+Use the sidebar on the left to navigate through the different sections of the application:
 
-elif page == "📊 EDA Dashboard":
-    load_page("pages.1_EDA_Dashboard")
+1. **📊 EDA Dashboard**: Explore the dataset through various visualizations.
+2. **🔮 Single-Day Prediction**: Get a sales prediction for a specific store, item, and date.
+3. **📈 Forecasting**: Generate sales forecasts for a range of dates.
+4. **📏 Model Evaluation**: View performance metrics and actual vs. predicted plots.
 
-elif page == "🔮 Single-Day Prediction":
-    load_page("pages.2_Predict_Sales")
-
-elif page == "📈 Forecasting":
-    load_page("pages.3_Forecasting")
-
-elif page == "📏 Model Evaluation":
-    load_page("pages.4_model_evaluation")
+---
+**Author**: Reneesh
+**Model**: XGBoost Regressor
+""")
